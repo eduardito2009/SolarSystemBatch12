@@ -1,0 +1,165 @@
+Branches in GIT
+Why do we need branches?
+1.not to mess up our main branch
+example :
+main branch --> facebook v5.0
+meta--> testing features to be added
+ once they have tested meta
+integrate it with main
+Main branch--> fb v5.0 --> meta final feautes added
+2.To add more features in our code
+3.To fix a bug
+                                THE  PROJECT  SOLAR SYSTEM
+*********************************************************************************************
+Requirement:To have the basic strucutre of the solar systemReady and deployed.
+***************************************STEPS******************************************************
+Lets quickly deploy this code after writing it in intellij
+git branch -M main--> name a branch
+git push -u origin main--> push after creation of the main branch on github
+*********************************************************************************************
+Requirement:Add the feature of the sun and upload to github
+***************************************STEPS******************************************************
+1.to create a new branch featureSun
+  git branch featureSun
+2. to switch to that branch
+   git checkout featureSun
+**Important**
+after writing code in each branch make sure you commit it and after that
+u switch the branch if needed or uplaod it to github
+please never switch the branch without commiting the code
+****
+3.upload the branch to github
+git push -u origin featureSun
+*********************************************************************************************
+Requirement:Merge the branch FeatureSun with main.
+***************************************STEPS*************************************************
+1.switch to main branch
+git checkout main
+2.merge the featureSun
+git merge featureSun
+Q)once we have switched to anew branch , what is going to be the code in our working directory??
+A)the code will be the same of the commit from where  we created the branch
+*********************************************************************************************
+Requirement:Add feature of Stars in the project
+***************************************STEPS*************************************************
+ 1.to create a new branch Stars
+  git branch Stars
+2. to switch to that branch
+   git checkout Stars
+**Important**
+after writing code in each branch make sure you commit it and after that
+u switch the branch if needed or uplaod it to github
+please never switch the branch without commiting the code
+****
+3.upload the branch to github
+git push -u origin Stars
+stars has some error which we want our friend to resolve
+.
+*********************************************************************************************
+Requirement:resolve issues in star and upload on github
+***************************************STEPS*************************************************
+1.clone the repo
+git clone url
+2.check the branches u have
+git branch
+**IMPORTANT**
+by defualt git clones only main branch
+so in order to have other branches u need follow the following steps
+a.git branch-a
+list all the branches there on github
+b. git checkout branch name
+dowloads the branch u specified
+**
+3.git branch -a
+to list all branches
+4.git checkout stars
+to have the branch star
+5.git branch IssueStar
+to create a branch IssueStar
+**Important**
+after writing code in each branch make sure you commit it and after that
+u switch the branch if needed or uplaod it to github
+please never switch the branch without commiting the code
+****
+6.git push -u origin IssueStar
+*********************************************************************************************
+Requirement:Merge issue star with Star on github
+***************************************STEPS*************************************************
+1.open a pull request by clicking on pull in github
+2.select base:star and merge:Issuestar
+3.click create a pull request
+4. click on pull request again
+5.view your pull request by clicking on it
+6.select merge and commit
+ your branch is merged successfully to Star
+*********************************************************************************************
+Requirement:Update Star on your local computer
+***************************************STEPS*************************************************
+On local your branch is still outdated to update it
+**Important**
+make sure you are in The right branch i.e Star
+****
+1.git fetch
+2.git pull
+*********************************************************************************************
+Requirement:merge Star on github to main
+***************************************STEPS*************************************************
+1.open a pull request by clicking on pull in github
+2.select base:maib and merge:Star
+3.click create a pull request
+4. click on pull request again
+5.view your pull request by clicking on it
+6.select merge and commit
+ your branch is merged successfully to main
+*********************************************************************************************
+Requirement:Update main on your local computer
+***************************************STEPS*************************************************
+On local your branch is still outdated to update it
+**Important**
+make sure you are in The right branch i.e main
+****
+1.git fetch
+2.git pull
+**Important**
+if begore u pull, you hvae some spaces or extra code in your branch which u havent commited and are trying to pull
+you will get error: abort , this will overwrite your changes...
+in order to resolve this error please
+1.use git diff
+see the changes that are there
+2.git stash -m "message"
+3.git pull
+that will resolve your issue
+****
+*********************************************************************************************
+Requirement:Understand merge strategies
+***************************************STEPS*************************************************
+
+FAST FORWARD MERGE:
+git uses fast forward merge if and only if there has been no more commits on the branch from where it was branched out.
+when we want to merge a branch  git looks at the history
+Fast-forward merge:
+If the commit history of the branch to which we are merging has not changed it wil do Fast-forward merge
+3 way merge:
+If the commit history of the branch to which we are merging has  changed it will do 3 way merge
+Example:
+**********************main branch**********************
+code:::::::
+A
+B
+C
+git branch  NewFeature
+git checkout Newfeature
+**********************NewFeature branch**********************
+code:::::::
+A
+F
+G
+git commit -m "new code"
+git checkout main
+git merge newFeature
+After Fast forward merge the new file in main branch
+**********************main branch**********************
+code:::::::
+A
+F
+G
