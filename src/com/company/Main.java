@@ -22,11 +22,20 @@ public class Main {
         FacX.radius="738y4932749km";
         FacX.size="9999999999m";
 
+
         //adding features for planet2
         Planet2 Oslo= new Planet2();
         Oslo.color="pink";
         Oslo.size="0000.1cm";
         Oslo.name="Ozhan";
+
+        //adding features for planet 1
+        PlanetFeatures Gulk= new PlanetFeatures();
+        Gulk.color="blue";
+        Gulk.size="386473837464km";
+        Gulk.name="preachex";
+        
+
         
     }
 }
